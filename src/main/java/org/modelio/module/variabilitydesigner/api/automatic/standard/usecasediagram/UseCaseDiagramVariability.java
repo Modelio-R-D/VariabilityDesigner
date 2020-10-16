@@ -9,7 +9,6 @@ package org.modelio.module.variabilitydesigner.api.automatic.standard.usecasedia
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.PropertyConverter;
 import org.modelio.api.module.context.IModuleContext;
@@ -32,9 +31,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
  * <p>Stereotype description:
  * <br/><i></i></p>
  */
-@objid ("141e5757-2ac6-4946-a536-4fa6f6c483f3")
 public class UseCaseDiagramVariability extends VariationDiagram {
-    @objid ("707ed4ab-55d5-44d8-a2ef-129e337bf4e9")
     public static final String STEREOTYPE_NAME = "Use_Case_Diagram_(Variability)";
 
     /**
@@ -45,7 +42,6 @@ public class UseCaseDiagramVariability extends VariationDiagram {
      * @param elt a model object
      * @return <code>true</code> if the instantiation can be carried out else <code>false</code>.
      */
-    @objid ("56f4e41a-4c35-40e5-b9df-8337db4d41b8")
     public static boolean canInstantiate(final MObject elt) {
         return ((elt instanceof UseCaseDiagram) && ((UseCaseDiagram) elt).isStereotyped(IVariabilityDesignerPeerModule.MODULE_NAME, UseCaseDiagramVariability.STEREOTYPE_NAME));
     }
@@ -55,7 +51,6 @@ public class UseCaseDiagramVariability extends VariationDiagram {
      * 
      * @return a {@link UseCaseDiagramVariability} proxy on the created {@link UseCaseDiagram}.
      */
-    @objid ("ad2c7454-94d5-464b-badd-34519158d1d7")
     public static UseCaseDiagramVariability create() {
         ModelElement e = (ModelElement)VariabilityDesignerModule.getInstance().getModuleContext().getModelingSession().getModel().createElement("Standard.UseCaseDiagram");
         e.addStereotype(IVariabilityDesignerPeerModule.MODULE_NAME, UseCaseDiagramVariability.STEREOTYPE_NAME);
@@ -63,34 +58,33 @@ public class UseCaseDiagramVariability extends VariationDiagram {
     }
 
     /**
-     * Tries to instantiate a {@link UseCaseDiagramVariability} proxy from a {@link UseCaseDiagram} stereotyped << Use_Case_Diagram_(Variability) >> checking its metaclass and its stereotype. 
+     * Tries to instantiate a {@link UseCaseDiagramVariability} proxy from a {@link UseCaseDiagram} stereotyped << Use_Case_Diagram_(Variability) >> checking its metaclass and its stereotype.
      * <p>
      * The method returns <i>null</i> if the instantiation cannot be carried out.
+     * 
      * @param obj a UseCaseDiagram
      * @return a {@link UseCaseDiagramVariability} proxy or <i>null</i>.
      */
-    @objid ("14388e99-fe90-42b1-a599-b46e8320ffa5")
     public static UseCaseDiagramVariability instantiate(final UseCaseDiagram obj) {
         return UseCaseDiagramVariability.canInstantiate(obj) ? new UseCaseDiagramVariability(obj) : null;
     }
 
     /**
-     * Tries to instantiate a {@link UseCaseDiagramVariability} proxy from a {@link UseCaseDiagram} stereotyped << Use_Case_Diagram_(Variability) >> checking its metaclass and its stereotype. 
+     * Tries to instantiate a {@link UseCaseDiagramVariability} proxy from a {@link UseCaseDiagram} stereotyped << Use_Case_Diagram_(Variability) >> checking its metaclass and its stereotype.
      * <p>
      * The method throws an {@link IllegalArgumentException} if the instantiation cannot be carried out.
+     * 
      * @param obj a {@link UseCaseDiagram}
      * @return a {@link UseCaseDiagramVariability} proxy.
-     * @throws IllegalArgumentException if the instantiation cannot be carried out.
+     * @throws java.lang.IllegalArgumentException if the instantiation cannot be carried out.
      */
-    @objid ("7707ebb8-faac-4e33-901a-f5441e67d0d6")
     public static UseCaseDiagramVariability safeInstantiate(final UseCaseDiagram obj) throws IllegalArgumentException {
         if (UseCaseDiagramVariability.canInstantiate(obj))
-        	return new UseCaseDiagramVariability(obj);
+            return new UseCaseDiagramVariability(obj);
         else
-        	throw new IllegalArgumentException("UseCaseDiagramVariability: Cannot instantiate "+obj+": wrong element type or stereotype");
+            throw new IllegalArgumentException("UseCaseDiagramVariability: Cannot instantiate "+obj+": wrong element type or stereotype");
     }
 
-    @objid ("814bd30a-29f3-44ea-9de5-1c1446a1e73e")
     @Override
     public boolean equals(final Object obj) {
         if (this == obj) {
@@ -107,38 +101,31 @@ public class UseCaseDiagramVariability extends VariationDiagram {
     }
 
     /**
-     * Get the underlying {@link UseCaseDiagram}. 
+     * Get the underlying {@link UseCaseDiagram}.
+     * 
      * @return the UseCaseDiagram represented by this proxy, never null.
      */
-    @objid ("b3834940-ff14-4fdb-ade7-815a96becb2a")
     @Override
     public UseCaseDiagram getElement() {
         return (UseCaseDiagram)super.getElement();
     }
 
-    @objid ("e84a2b37-27d5-4046-b7e3-89cd73088e67")
     @Override
     public int hashCode() {
         return 23 + ((this.elt == null) ? 0 : this.elt.hashCode());
     }
 
-    @objid ("1447f77a-09c7-441e-b8a9-8a58657f34f3")
     protected UseCaseDiagramVariability(final UseCaseDiagram elt) {
         super(elt);
     }
 
-    @objid ("ecd98297-8490-4343-8c46-7cdb411be5ab")
     public static final class MdaTypes {
-        @objid ("c097d840-971f-4d1d-80bb-7f6b4c3eda22")
         public static Stereotype STEREOTYPE_ELT;
 
-        @objid ("b104d41b-1aa8-421b-9370-f474af81673d")
         private static Stereotype MDAASSOCDEP;
 
-        @objid ("f3c9ced4-f107-40f6-9257-2ed60af7cc7b")
         private static TagType MDAASSOCDEP_ROLE;
 
-        @objid ("340bca0d-351c-4bb4-a885-cc53a84655fc")
         public static void init(final IModuleContext ctx) {
             STEREOTYPE_ELT = ctx.getModelingSession().findElementById(Stereotype.class, "e03a90f1-d88d-4ee7-a169-3d4c07e7c238");
             MDAASSOCDEP = ctx.getModelingSession().findElementById(Stereotype.class, "94b7efa5-f94c-4d1d-896f-f103e56a8e2e");
@@ -146,11 +133,11 @@ public class UseCaseDiagramVariability extends VariationDiagram {
         }
 
 
-	static {
-		if(VariabilityDesignerModule.getInstance() != null) {
-			init(VariabilityDesignerModule.getInstance().getModuleContext());
-		}
-	}
+static {
+        if(VariabilityDesignerModule.getInstance() != null) {
+            init(VariabilityDesignerModule.getInstance().getModuleContext());
+        }
+    }
     }
 
 }

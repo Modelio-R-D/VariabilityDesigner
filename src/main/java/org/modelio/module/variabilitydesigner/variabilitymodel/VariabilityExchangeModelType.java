@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour variability-exchange-model-type complex type.
@@ -30,22 +29,18 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("c4fbf428-32d3-4efd-a088-9f6ffae2b06e")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "variability-exchange-model-type", propOrder = {
     "variationpointGroup"
 })
 public class VariabilityExchangeModelType extends IdentifiableType {
-    @objid ("2dd943b6-8b8c-470f-8315-dc9f09ace5a9")
     @XmlAttribute(name = "type", required = true)
     protected VariabilityApiEnum type;
 
-    @objid ("2bc15e7b-09f1-436a-a8e2-402ccaa88a02")
     @XmlAttribute(name = "uri")
     @XmlSchemaType(name = "anyURI")
     protected String uri;
 
-    @objid ("e5bb9aea-3507-4b78-94e0-d76b130ccbee")
     @XmlElements({
         @XmlElement(name = "optional-structural-variationpoint", type = OptionalStructuralVariationpointType.class),
         @XmlElement(name = "xor-structural-variationpoint", type = XorStructuralVariationpointType.class),
@@ -77,7 +72,6 @@ public class VariabilityExchangeModelType extends IdentifiableType {
      * {@link CalculatedParameterVariationpointType }
      * {@link XorParameterVariationpointType }
      */
-    @objid ("17830f99-cba4-4c99-ace0-4552433b0642")
     public List<VariationpointType> getVariationpointGroup() {
         if (variationpointGroup == null) {
             variationpointGroup = new ArrayList<VariationpointType>();
@@ -91,7 +85,6 @@ public class VariabilityExchangeModelType extends IdentifiableType {
      * possible object is
      * {@link VariabilityApiEnum }
      */
-    @objid ("c56b1d99-b9e4-41a8-a7ba-af7cafb44a4f")
     public VariabilityApiEnum getType() {
         return type;
     }
@@ -102,7 +95,6 @@ public class VariabilityExchangeModelType extends IdentifiableType {
      * @param value allowed object is
      * {@link VariabilityApiEnum }
      */
-    @objid ("4f50478d-8b9f-415f-bc9b-3acaa5f5bfd7")
     public void setType(VariabilityApiEnum value) {
         this.type = value;
     }
@@ -113,7 +105,6 @@ public class VariabilityExchangeModelType extends IdentifiableType {
      * possible object is
      * {@link String }
      */
-    @objid ("7153e3af-7657-4962-8758-3b2560d573bc")
     public String getUri() {
         return uri;
     }
@@ -124,7 +115,6 @@ public class VariabilityExchangeModelType extends IdentifiableType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("b6c138c1-854d-49d1-93b8-2ef97365f09c")
     public void setUri(String value) {
         this.uri = value;
     }

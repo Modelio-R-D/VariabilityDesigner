@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour special-data-type complex type.
@@ -26,17 +25,14 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("ec6902d3-a157-4e07-ad2a-2563684e97df")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "special-data-type", propOrder = {
     "data"
 })
 public class SpecialDataType {
-    @objid ("77d1cd13-4001-4b57-a153-d9e1885d373e")
     @XmlAttribute(name = "name")
     protected String name;
 
-    @objid ("f627fea2-0666-47ed-9859-93f6f4ebfa3c")
     protected List<KeyValuePairType> data;
 
     /**
@@ -59,7 +55,6 @@ public class SpecialDataType {
      * Objects of the following type(s) are allowed in the list
      * {@link KeyValuePairType }
      */
-    @objid ("90d831d5-a5e3-4a26-a5b3-e3b85800eda9")
     public List<KeyValuePairType> getData() {
         if (data == null) {
             data = new ArrayList<KeyValuePairType>();
@@ -73,7 +68,6 @@ public class SpecialDataType {
      * possible object is
      * {@link String }
      */
-    @objid ("7e1eb522-8bbc-4702-83d9-6c9b6b02bedc")
     public String getName() {
         return name;
     }
@@ -84,7 +78,6 @@ public class SpecialDataType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("0eabb0d3-b8a1-47e2-84d4-a0330f4dc902")
     public void setName(String value) {
         this.name = value;
     }

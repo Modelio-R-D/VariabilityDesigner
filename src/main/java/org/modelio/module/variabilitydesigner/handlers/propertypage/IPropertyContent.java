@@ -28,7 +28,6 @@
  **/
 package org.modelio.module.variabilitydesigner.handlers.propertypage;
 
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
@@ -36,7 +35,6 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
  * This interface defines the contract of all property pages
  * @author ebrosse
  */
-@objid ("a16e4f11-2c7c-4d0c-ab98-ead307ed5f20")
 public interface IPropertyContent {
     /**
      * This method handles the changes of the given property, identified by its row index, of a selected element
@@ -46,7 +44,6 @@ public interface IPropertyContent {
      * @param row : the row of the changed property
      * @param value : the new value of the property
      */
-    @objid ("57765668-a646-4fcc-97a0-a7077bc884e5")
     int changeProperty(ModelElement element, int row, String value);
 
     /**
@@ -55,7 +52,6 @@ public interface IPropertyContent {
      * 
      * @param table : the property table to fulfill
      */
-    @objid ("c9b61c8e-f577-4798-9f26-4c5b250b2bc0")
     void update(ModelElement element, IModulePropertyTable table);
 
 }

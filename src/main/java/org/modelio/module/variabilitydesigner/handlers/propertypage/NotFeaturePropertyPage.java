@@ -2,7 +2,6 @@ package org.modelio.module.variabilitydesigner.handlers.propertypage;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
@@ -14,15 +13,11 @@ import org.modelio.module.variabilitydesigner.api.feature.standard.class_.OrFeat
 import org.modelio.module.variabilitydesigner.i18n.Messages;
 import org.modelio.module.variabilitydesigner.impl.VariabilityDesignerModule;
 
-@objid ("20180d3f-aea8-40d8-8961-9565cc0c8eca")
 public class NotFeaturePropertyPage implements IPropertyContent {
-    @objid ("ba4d7b31-b750-43a3-98e7-6b948b943caa")
     private static List<String> names = new ArrayList<>();
 
-    @objid ("5d76f753-d5db-4450-8536-f324489db00a")
     private static List<org.modelio.metamodel.uml.statik.Class> features = new ArrayList<>();
 
-    @objid ("65037746-9182-4d04-8e3f-fa7069a5e77d")
     @Override
     public int changeProperty(ModelElement element, int row, String value) {
         if(row == 1) {
@@ -40,7 +35,6 @@ public class NotFeaturePropertyPage implements IPropertyContent {
         return 1;
     }
 
-    @objid ("269eb13d-6944-4a4a-aae1-abb9b33985b5")
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
         /*

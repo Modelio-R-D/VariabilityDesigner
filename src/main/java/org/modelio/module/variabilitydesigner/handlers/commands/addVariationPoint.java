@@ -5,7 +5,7 @@ import org.modelio.api.module.IModule;
 import org.modelio.api.module.command.standard.ElementCreationStandardHandler;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-public class RootFeature extends ElementCreationStandardHandler {
+public class addVariationPoint extends ElementCreationStandardHandler {
     @Override
     public boolean accept(final List<MObject> selectedElements, final IModule module) {
         // Generated call to the super method will check the scope conditions defined in Studio.

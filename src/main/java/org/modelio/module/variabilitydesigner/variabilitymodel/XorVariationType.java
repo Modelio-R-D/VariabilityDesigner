@@ -3,7 +3,6 @@ package org.modelio.module.variabilitydesigner.variabilitymodel;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour xor-variation-type complex type.
@@ -22,13 +21,11 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("2872ef4b-5b26-49a1-b274-39afea95bb95")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "xor-variation-type", propOrder = {
     "condition"
 })
 public class XorVariationType extends VariationType {
-    @objid ("c8d9e74b-c323-4b24-8dec-0018f4085ce6")
     protected ExpressionType condition;
 
     /**
@@ -37,7 +34,6 @@ public class XorVariationType extends VariationType {
      * possible object is
      * {@link ExpressionType }
      */
-    @objid ("872a3b3a-4e4c-4740-a982-246001d10fa4")
     public ExpressionType getCondition() {
         return condition;
     }
@@ -48,7 +44,6 @@ public class XorVariationType extends VariationType {
      * @param value allowed object is
      * {@link ExpressionType }
      */
-    @objid ("41b89ea2-806f-4fa1-9382-b1d6a8076ab6")
     public void setCondition(ExpressionType value) {
         this.condition = value;
     }

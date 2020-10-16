@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Module id="${project.name}" class="org.modelio.module.variabilitydesigner.impl.VariabilityDesignerModule" binaryversion="4.0.0" version="${project.version}" schema-level="2" uid="b344afb4-c0f7-44d1-9b1e-b27b0deaf5ac" author="Softeam" image="" url="">
+<Module id="${project.name}" class="org.modelio.module.variabilitydesigner.impl.VariabilityDesignerModule" binaryversion="4.1.0" version="${project.version}" schema-level="2" uid="b344afb4-c0f7-44d1-9b1e-b27b0deaf5ac" author="Softeam" image="" url="">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
     </ClassPath>
@@ -203,6 +203,12 @@
                     <HParameter name="stereotype" value="VariabilityDesigner#FeatureRoot"/>
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="name" value="Root"/>
+                </Handler>
+            </Command>
+            <Command id="Add_Variation_Point" label="%command.Add_Variation_Point.label" tooltip="%command.Add_Variation_Point.tooltip" image="" modify-model="false">
+                <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.addVariationPoint">
+                    <HParameter name="metaclass" value="Standard.Constraint"/>
                 </Handler>
             </Command>
         </Commands>
@@ -447,7 +453,9 @@
             </DiagramType>
         </Diagrams>
         <Views>
-            <PropertyPage id="Variations" class="org.modelio.module.variabilitydesigner.handlers.propertypage.VariabilityPropertyPage" label="%propertypage.Variations.label" image="res/icon/gui/variability16.png"/>
+            <PropertyPage id="Variations" class="org.modelio.module.variabilitydesigner.handlers.propertypage.VariabilityPropertyPage" label="%propertypage.Variations.label" image="res/icon/gui/variability16.png">
+                <CommandRef refid="Add_Variation_Point" group="" group-image=""/>
+            </PropertyPage>
         </Views>
     </Gui>
     <Resources>

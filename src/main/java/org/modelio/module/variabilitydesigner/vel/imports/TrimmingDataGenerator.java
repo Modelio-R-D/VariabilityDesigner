@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.module.context.IModuleContext;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
@@ -28,9 +27,7 @@ import org.modelio.module.variabilitydesigner.variabilitymodel.XorParameterVaria
 import org.modelio.module.variabilitydesigner.variabilitymodel.XorStructuralVariationpointType;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-@objid ("8b61a3da-6fa3-453f-8c9e-c532beef68de")
 public class TrimmingDataGenerator {
-    @objid ("6d905090-33d9-46e1-8e6a-f57989bc980a")
     public TrimmingData generate(VariabilityExchangeModelsType variabilityExchangeModelsType, IModuleContext ctx) {
         TrimmingData result = new TrimmingData();
         
@@ -42,7 +39,6 @@ public class TrimmingDataGenerator {
         return result;
     }
 
-    @objid ("bbc0aa3d-66d2-492d-9d45-73906bd2d215")
     private Set<MObject> buildSetOfElementsToRemove(IModelingSession modelingSession, Set<String> uuids) {
         Set<MObject> set = new SpecialSet();
         for(String uuid : uuids) {
@@ -51,7 +47,6 @@ public class TrimmingDataGenerator {
         return set;
     }
 
-    @objid ("5f4003d6-a073-432a-abb5-28a2225e9f36")
     private Set<String> fetchUUidsToRemove(VariabilityExchangeModelsType variabilityExchangeModelsType) {
         Set<String> selected = new HashSet<>();
         Set<String> unselected = new HashSet<>();
@@ -72,7 +67,6 @@ public class TrimmingDataGenerator {
         return unselected;
     }
 
-    @objid ("d6274e37-ffdb-4a89-b817-770fbeb453d1")
     private void extractUUIDs(VariationpointType variationpoint, Set<String> selected, Set<String> unselected) {
         for(VariationType variation : variationpoint.getVariations()) {
             Set<String> toAdd;
@@ -93,7 +87,6 @@ public class TrimmingDataGenerator {
         }
     }
 
-    @objid ("3e690387-7890-4700-945a-2d9c178e040a")
     private Map<MObject, Collection<MAttributeValue>> getParameterHandling(IModelingSession modelingSession, VariabilityExchangeModelsType variabilityExchangeModelsType) {
         VariabilityExchangeModelType model = variabilityExchangeModelsType.getVariabilityExchangeModel().get(0);
         
@@ -124,7 +117,6 @@ public class TrimmingDataGenerator {
         return parameterSetup;
     }
 
-    @objid ("54085072-6c9d-4100-bf48-ea0a521b147f")
     private <T,K> void addElementToCollectionMap(Map<T, Collection<K>> map, T key, K value, Supplier<Collection<K>> supplier) {
         Collection<K> col = map.get(key);
         if(col == null) {
@@ -137,7 +129,6 @@ public class TrimmingDataGenerator {
         }
     }
 
-    @objid ("beda3d15-0340-4c1d-8083-4480f9afc453")
     public TrimmingData generate(IModuleContext ctx, org.modelio.metamodel.uml.statik.Class variant) {
         TrimmingData result = new TrimmingData();
         
@@ -147,7 +138,6 @@ public class TrimmingDataGenerator {
         return result;
     }
 
-    @objid ("cbe4fa1e-5dac-4faa-b227-4fe5591b490c")
     private Set<MObject> getFeatures(Class variant) {
         Set<MObject> set = new SpecialSet();
         for(Dependency dep : variant.getDependsOnDependency()) {

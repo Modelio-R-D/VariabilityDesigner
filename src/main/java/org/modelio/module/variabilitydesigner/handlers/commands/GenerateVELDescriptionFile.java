@@ -6,7 +6,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
@@ -17,9 +16,7 @@ import org.modelio.module.variabilitydesigner.variabilitymodel.VariabilityExchan
 import org.modelio.module.variabilitydesigner.vel.generation.VariabilityModelGenerator;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-@objid ("abb9be3b-7763-4f63-8248-b055c8cbc287")
 public class GenerateVELDescriptionFile extends DefaultModuleCommandHandler {
-    @objid ("13db60fa-f6ec-41a4-a850-59e0d5f73d3c")
     @Override
     public void actionPerformed(final List<MObject> selectedElements, final IModule module) {
         VariabilityModelGenerator generator = new VariabilityModelGenerator();
@@ -49,7 +46,6 @@ public class GenerateVELDescriptionFile extends DefaultModuleCommandHandler {
         }
     }
 
-    @objid ("f9569078-af9b-4192-a7e7-eb6ea155a393")
     @Override
     public boolean accept(final List<MObject> selectedElements, final IModule module) {
         // Generated call to the super method will check the scope conditions defined in Studio.

@@ -9,7 +9,6 @@ package org.modelio.module.variabilitydesigner.api.automatic.standard.objectdiag
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.PropertyConverter;
 import org.modelio.api.module.context.IModuleContext;
@@ -32,9 +31,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
  * <p>Stereotype description:
  * <br/><i></i></p>
  */
-@objid ("5e69d8ce-a14c-43b3-a011-c314dc1cd003")
 public class ObjectDiagramVariability extends VariationDiagram {
-    @objid ("b2ac15f4-eeaf-4aed-91f7-d25a473b650c")
     public static final String STEREOTYPE_NAME = "Object_Diagram_(Variability)";
 
     /**
@@ -45,7 +42,6 @@ public class ObjectDiagramVariability extends VariationDiagram {
      * @param elt a model object
      * @return <code>true</code> if the instantiation can be carried out else <code>false</code>.
      */
-    @objid ("718dab22-081e-4c60-b2d9-cc68cf87eced")
     public static boolean canInstantiate(final MObject elt) {
         return ((elt instanceof ObjectDiagram) && ((ObjectDiagram) elt).isStereotyped(IVariabilityDesignerPeerModule.MODULE_NAME, ObjectDiagramVariability.STEREOTYPE_NAME));
     }
@@ -55,7 +51,6 @@ public class ObjectDiagramVariability extends VariationDiagram {
      * 
      * @return a {@link ObjectDiagramVariability} proxy on the created {@link ObjectDiagram}.
      */
-    @objid ("2602a669-31e1-4528-be1d-39c459c8a554")
     public static ObjectDiagramVariability create() {
         ModelElement e = (ModelElement)VariabilityDesignerModule.getInstance().getModuleContext().getModelingSession().getModel().createElement("Standard.ObjectDiagram");
         e.addStereotype(IVariabilityDesignerPeerModule.MODULE_NAME, ObjectDiagramVariability.STEREOTYPE_NAME);
@@ -63,34 +58,33 @@ public class ObjectDiagramVariability extends VariationDiagram {
     }
 
     /**
-     * Tries to instantiate a {@link ObjectDiagramVariability} proxy from a {@link ObjectDiagram} stereotyped << Object_Diagram_(Variability) >> checking its metaclass and its stereotype. 
+     * Tries to instantiate a {@link ObjectDiagramVariability} proxy from a {@link ObjectDiagram} stereotyped << Object_Diagram_(Variability) >> checking its metaclass and its stereotype.
      * <p>
      * The method returns <i>null</i> if the instantiation cannot be carried out.
+     * 
      * @param obj a ObjectDiagram
      * @return a {@link ObjectDiagramVariability} proxy or <i>null</i>.
      */
-    @objid ("e5130299-ff91-43fc-a735-14da98815ee6")
     public static ObjectDiagramVariability instantiate(final ObjectDiagram obj) {
         return ObjectDiagramVariability.canInstantiate(obj) ? new ObjectDiagramVariability(obj) : null;
     }
 
     /**
-     * Tries to instantiate a {@link ObjectDiagramVariability} proxy from a {@link ObjectDiagram} stereotyped << Object_Diagram_(Variability) >> checking its metaclass and its stereotype. 
+     * Tries to instantiate a {@link ObjectDiagramVariability} proxy from a {@link ObjectDiagram} stereotyped << Object_Diagram_(Variability) >> checking its metaclass and its stereotype.
      * <p>
      * The method throws an {@link IllegalArgumentException} if the instantiation cannot be carried out.
+     * 
      * @param obj a {@link ObjectDiagram}
      * @return a {@link ObjectDiagramVariability} proxy.
-     * @throws IllegalArgumentException if the instantiation cannot be carried out.
+     * @throws java.lang.IllegalArgumentException if the instantiation cannot be carried out.
      */
-    @objid ("bce830c2-e13c-4b10-b854-2d0cd7ccd69f")
     public static ObjectDiagramVariability safeInstantiate(final ObjectDiagram obj) throws IllegalArgumentException {
         if (ObjectDiagramVariability.canInstantiate(obj))
-        	return new ObjectDiagramVariability(obj);
+            return new ObjectDiagramVariability(obj);
         else
-        	throw new IllegalArgumentException("ObjectDiagramVariability: Cannot instantiate "+obj+": wrong element type or stereotype");
+            throw new IllegalArgumentException("ObjectDiagramVariability: Cannot instantiate "+obj+": wrong element type or stereotype");
     }
 
-    @objid ("0e89f5b1-ee0b-42a2-8d28-57479da68239")
     @Override
     public boolean equals(final Object obj) {
         if (this == obj) {
@@ -107,38 +101,31 @@ public class ObjectDiagramVariability extends VariationDiagram {
     }
 
     /**
-     * Get the underlying {@link ObjectDiagram}. 
+     * Get the underlying {@link ObjectDiagram}.
+     * 
      * @return the ObjectDiagram represented by this proxy, never null.
      */
-    @objid ("b28639dd-f28d-466b-8577-aa41016ad593")
     @Override
     public ObjectDiagram getElement() {
         return (ObjectDiagram)super.getElement();
     }
 
-    @objid ("1b4faddb-6ade-4899-8f1c-8476753f3ff2")
     @Override
     public int hashCode() {
         return 23 + ((this.elt == null) ? 0 : this.elt.hashCode());
     }
 
-    @objid ("ac7c0a1e-cd76-4595-b007-0675157b874a")
     protected ObjectDiagramVariability(final ObjectDiagram elt) {
         super(elt);
     }
 
-    @objid ("0f6fe57d-5f1f-4aa6-999f-630215d6cf13")
     public static final class MdaTypes {
-        @objid ("e0c0ee9a-bb3f-4279-9dcb-40aeb6f845fc")
         public static Stereotype STEREOTYPE_ELT;
 
-        @objid ("31ea57bf-6d1f-4ebb-9944-7d70aac44abd")
         private static Stereotype MDAASSOCDEP;
 
-        @objid ("30a91750-4ecc-414e-adb7-e76cff573087")
         private static TagType MDAASSOCDEP_ROLE;
 
-        @objid ("debec485-0876-4fc4-9fc3-bf2f82f76e6f")
         public static void init(final IModuleContext ctx) {
             STEREOTYPE_ELT = ctx.getModelingSession().findElementById(Stereotype.class, "faabe302-91ef-47cd-92a8-6919e788840d");
             MDAASSOCDEP = ctx.getModelingSession().findElementById(Stereotype.class, "94b7efa5-f94c-4d1d-896f-f103e56a8e2e");
@@ -146,11 +133,11 @@ public class ObjectDiagramVariability extends VariationDiagram {
         }
 
 
-	static {
-		if(VariabilityDesignerModule.getInstance() != null) {
-			init(VariabilityDesignerModule.getInstance().getModuleContext());
-		}
-	}
+static {
+        if(VariabilityDesignerModule.getInstance() != null) {
+            init(VariabilityDesignerModule.getInstance().getModuleContext());
+        }
+    }
     }
 
 }

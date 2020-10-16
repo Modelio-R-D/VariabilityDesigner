@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour key-value-pair-type complex type.
@@ -40,18 +39,15 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("7fb73817-255f-4b24-9297-2c880afb4b2c")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "key-value-pair-type", propOrder = {
     "key",
     "value"
 })
 public class KeyValuePairType {
-    @objid ("96e86e4d-a057-442c-bd1c-fbd29049dde3")
     @XmlElement(required = true)
     protected String key;
 
-    @objid ("e77d39e5-218c-4287-87dd-807527198de1")
     @XmlElement(required = true)
     protected org.modelio.module.variabilitydesigner.variabilitymodel.KeyValuePairType.Value value;
 
@@ -61,7 +57,6 @@ public class KeyValuePairType {
      * possible object is
      * {@link String }
      */
-    @objid ("f26c5765-ecfb-4f45-af2f-3866ca568f97")
     public String getKey() {
         return key;
     }
@@ -72,7 +67,6 @@ public class KeyValuePairType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("11a22681-0a62-428c-84be-b7ebc174b1c5")
     public void setKey(String value) {
         this.key = value;
     }
@@ -83,7 +77,6 @@ public class KeyValuePairType {
      * possible object is
      * {@link KeyValuePairType.Value }
      */
-    @objid ("0a3f60e8-9dc0-4554-9697-49a5ebd9372d")
     public org.modelio.module.variabilitydesigner.variabilitymodel.KeyValuePairType.Value getValue() {
         return value;
     }
@@ -94,7 +87,6 @@ public class KeyValuePairType {
      * @param value allowed object is
      * {@link KeyValuePairType.Value }
      */
-    @objid ("b1103917-81be-4785-8a87-8c84fcaaa778")
     public void setValue(org.modelio.module.variabilitydesigner.variabilitymodel.KeyValuePairType.Value value) {
         this.value = value;
     }
@@ -114,17 +106,14 @@ public class KeyValuePairType {
      * &lt;/complexType>
      * </pre>
      */
-    @objid ("78b31c07-cdb2-4cf1-9f07-ee0a7e48f03b")
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "value"
     })
     public static class Value {
-        @objid ("1ca70834-659d-4f85-b3ba-138e349fb6f1")
         @XmlValue
         protected String value;
 
-        @objid ("6a2a66b3-efee-4e44-9f99-4728d4b1efaf")
         @XmlAttribute(name = "type")
         protected String type;
 
@@ -134,7 +123,6 @@ public class KeyValuePairType {
          * possible object is
          * {@link String }
          */
-        @objid ("936fc071-aa4e-4cdd-af21-1b0e383d7c78")
         public String getValue() {
             return value;
         }
@@ -145,7 +133,6 @@ public class KeyValuePairType {
          * @param value allowed object is
          * {@link String }
          */
-        @objid ("8225e4fc-7742-4a2a-b1c7-c72754499861")
         public void setValue(String value) {
             this.value = value;
         }
@@ -156,7 +143,6 @@ public class KeyValuePairType {
          * possible object is
          * {@link String }
          */
-        @objid ("529cc763-e3fa-4410-8f30-a79d52aaa3c5")
         public String getType() {
             return type;
         }
@@ -167,7 +153,6 @@ public class KeyValuePairType {
          * @param value allowed object is
          * {@link String }
          */
-        @objid ("790e039a-7fd2-42a5-98a7-6a767e0d05f4")
         public void setType(String value) {
             this.type = value;
         }

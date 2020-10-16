@@ -3,7 +3,6 @@ package org.modelio.module.variabilitydesigner.vel.generation.process;
 import java.util.Map;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.metamodel.uml.infrastructure.Constraint;
 import org.modelio.metamodel.uml.infrastructure.UmlModelElement;
 import org.modelio.module.variabilitydesigner.api.VariabilityDesignerStereotypes;
@@ -26,15 +25,11 @@ import org.modelio.module.variabilitydesigner.variabilitymodel.XorStructuralVari
 import org.modelio.module.variabilitydesigner.variabilitymodel.XorVariationType;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-@objid ("29b725fd-79f8-41d8-a1e4-8ba8b2844233")
 public class VariabilityModelCreator extends UMLProcess {
-    @objid ("9876259f-e5b1-4ce7-bbd0-99cb3ac98b25")
     private Map<String, VariationpointType> _map;
 
-    @objid ("7ba15cf7-8ecb-4ea4-82af-b1f0ae7bfc9a")
     private ObjectFactory _factory;
 
-    @objid ("7a5fcfea-71e7-4950-9db1-4e330fff1078")
     @Override
     public void process(MObject element) {
         if (element instanceof Constraint) {
@@ -51,14 +46,12 @@ public class VariabilityModelCreator extends UMLProcess {
         }
     }
 
-    @objid ("d233f000-fcd5-4a7d-9dc3-9b97ddc82eb3")
     public VariabilityModelCreator(Map<String, VariationpointType> map, ObjectFactory factory) {
         super();
         _map = map;
         _factory = factory;
     }
 
-    @objid ("2968788a-fdd1-4456-8d4e-531ff6a87a9b")
     private CalculatedVariationType createCalculatedParameterVariation(Constraint constraint) {
         CalculatedVariationType res = _factory.createCalculatedVariationType();
         
@@ -89,7 +82,6 @@ public class VariabilityModelCreator extends UMLProcess {
         return res;
     }
 
-    @objid ("ce5fdaa5-9ce2-44b8-9970-9ceb328e1471")
     private ValueVariationType createValueParameterVariation(Constraint constraint) {
         ValueVariationType res = _factory.createValueVariationType();
         
@@ -120,7 +112,6 @@ public class VariabilityModelCreator extends UMLProcess {
         return res;
     }
 
-    @objid ("4a683416-a7cc-41ab-82e8-636fd82800a7")
     private XorVariationType createXorStructuralVariation(Constraint constraint) {
         XorVariationType res = _factory.createXorVariationType();
         
@@ -150,7 +141,6 @@ public class VariabilityModelCreator extends UMLProcess {
         return res;
     }
 
-    @objid ("325d9aee-5080-4c16-a902-5ba08bdd1c4c")
     private OptionalVariationType createOptionalStructuralVariation(Constraint constraint) {
         OptionalVariationType res = _factory.createOptionalVariationType();
         
@@ -180,7 +170,6 @@ public class VariabilityModelCreator extends UMLProcess {
         return res;
     }
 
-    @objid ("e5207718-55f2-4fee-9c00-10ea2865bd95")
     protected void addElementsToRemove(Constraint constraint, VariationType res) {
         ArtifactElementType artifact = _factory.createArtifactElementType();
         for(UmlModelElement element : constraint.getConstrainedElement()) {
@@ -189,7 +178,6 @@ public class VariabilityModelCreator extends UMLProcess {
         res.getCorrespondingVariableArtifactElement().add(artifact);
     }
 
-    @objid ("2a407d59-76fb-49d4-b377-06030025b29f")
     protected void addParameteredElements(Constraint constraint, VariationType res) {
         //TODO add checks ? Not needed if used correctly ...
         ArtifactElementType artifact = _factory.createArtifactElementType();

@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour variationpoint-type complex type.
@@ -27,7 +26,6 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("b1e8bfc7-5fcd-4899-ae04-d3dfe62caf31")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "variationpoint-type", propOrder = {
     "bindingtime",
@@ -40,10 +38,8 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
     XorStructuralVariationpointType.class
 })
 public abstract class VariationpointType extends IdentifiableType {
-    @objid ("2d721b34-f29e-448a-a615-bc4613c9d6dd")
     protected List<BindingtimeType> bindingtime;
 
-    @objid ("92c363bd-a502-401f-a372-fb180ce09c92")
     @XmlElement(name = "corresponding-variable-artifact-element")
     protected List<ArtifactElementType> correspondingVariableArtifactElement;
 
@@ -67,7 +63,6 @@ public abstract class VariationpointType extends IdentifiableType {
      * Objects of the following type(s) are allowed in the list
      * {@link BindingtimeType }
      */
-    @objid ("2e5fbbc7-5066-42e7-ad10-57f58a38b8d9")
     public List<BindingtimeType> getBindingtime() {
         if (bindingtime == null) {
             bindingtime = new ArrayList<BindingtimeType>();
@@ -95,7 +90,6 @@ public abstract class VariationpointType extends IdentifiableType {
      * Objects of the following type(s) are allowed in the list
      * {@link ArtifactElementType }
      */
-    @objid ("0f91755c-9f29-42f5-83e0-1ddff2f2e6d9")
     public List<ArtifactElementType> getCorrespondingVariableArtifactElement() {
         if (correspondingVariableArtifactElement == null) {
             correspondingVariableArtifactElement = new ArrayList<ArtifactElementType>();
@@ -103,7 +97,6 @@ public abstract class VariationpointType extends IdentifiableType {
         return this.correspondingVariableArtifactElement;
     }
 
-    @objid ("a07f0c3e-5249-4f3c-a8eb-7774ecc87ee7")
     public abstract List<VariationType> getVariations();
 
 }

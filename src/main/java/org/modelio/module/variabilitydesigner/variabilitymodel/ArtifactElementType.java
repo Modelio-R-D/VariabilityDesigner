@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.w3c.dom.Element;
 
 /**
@@ -31,23 +30,19 @@ import org.w3c.dom.Element;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("0433579f-4903-4a84-b3e9-2f09cb0bbcfe")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "artifact-element-type", propOrder = {
     "any"
 })
 @XmlSeeAlso(Uuid.class)
 public class ArtifactElementType {
-    @objid ("df017e41-8461-4828-838e-fd6df7efd386")
     @XmlAttribute(name = "type")
     protected String type;
 
-    @objid ("27fe99bf-1fb7-4293-a7fc-1a76fe642c2f")
     @XmlAttribute(name = "uri")
     @XmlSchemaType(name = "anyURI")
     protected String uri;
 
-    @objid ("d9c4ee43-de44-44a6-aa39-145a1b809824")
     @XmlAnyElement(lax = true)
     protected List<Object> any;
 
@@ -72,7 +67,6 @@ public class ArtifactElementType {
      * {@link Element }
      * {@link Object }
      */
-    @objid ("64975bf2-22fe-40a7-b78b-b1b8d1967fae")
     public List<Object> getAny() {
         if (any == null) {
             any = new ArrayList<Object>();
@@ -86,7 +80,6 @@ public class ArtifactElementType {
      * possible object is
      * {@link String }
      */
-    @objid ("80e1f0bd-165d-45e7-9021-09d017ef4aa6")
     public String getType() {
         return type;
     }
@@ -97,7 +90,6 @@ public class ArtifactElementType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("99e62484-a97f-4363-931e-6972265f840e")
     public void setType(String value) {
         this.type = value;
     }
@@ -108,7 +100,6 @@ public class ArtifactElementType {
      * possible object is
      * {@link String }
      */
-    @objid ("15162955-74df-42b4-839f-424a6c99a801")
     public String getUri() {
         return uri;
     }
@@ -119,7 +110,6 @@ public class ArtifactElementType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("0ff79c71-8748-47c8-a860-5008e4f64c71")
     public void setUri(String value) {
         this.uri = value;
     }

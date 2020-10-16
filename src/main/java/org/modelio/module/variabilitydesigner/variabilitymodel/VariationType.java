@@ -8,7 +8,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour variation-type complex type.
@@ -30,7 +29,6 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("17ffaed7-ec79-4bba-a0a3-251da1922e09")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "variation-type", propOrder = {
     "hierarchy",
@@ -44,17 +42,13 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
     ValueVariationType.class
 })
 public abstract class VariationType extends IdentifiableType {
-    @objid ("35fb03f9-d11c-4dc8-b42a-13726bff571a")
     @XmlAttribute(name = "selected")
     protected Boolean selected;
 
-    @objid ("59741bc7-c3f8-4d92-a04e-d8a4000a486c")
     protected VariationpointHierarchyType hierarchy;
 
-    @objid ("83919641-249f-4746-ab2a-734693b9cd62")
     protected List<VariationDependencyType> depencency;
 
-    @objid ("b197d672-7d74-421a-9c8d-a8407c4b5377")
     @XmlElement(name = "corresponding-variable-artifact-element")
     protected List<ArtifactElementType> correspondingVariableArtifactElement;
 
@@ -64,7 +58,6 @@ public abstract class VariationType extends IdentifiableType {
      * possible object is
      * {@link VariationpointHierarchyType }
      */
-    @objid ("1753b6d9-8b48-41a9-af6d-e161464e2168")
     public VariationpointHierarchyType getHierarchy() {
         return hierarchy;
     }
@@ -75,7 +68,6 @@ public abstract class VariationType extends IdentifiableType {
      * @param value allowed object is
      * {@link VariationpointHierarchyType }
      */
-    @objid ("6133a9b4-5a5c-4700-b8f5-0745a51dd52d")
     public void setHierarchy(VariationpointHierarchyType value) {
         this.hierarchy = value;
     }
@@ -100,7 +92,6 @@ public abstract class VariationType extends IdentifiableType {
      * Objects of the following type(s) are allowed in the list
      * {@link VariationDependencyType }
      */
-    @objid ("02bac9dd-8814-434d-8fdc-42c8ed3fffbb")
     public List<VariationDependencyType> getDepencency() {
         if (depencency == null) {
             depencency = new ArrayList<VariationDependencyType>();
@@ -128,7 +119,6 @@ public abstract class VariationType extends IdentifiableType {
      * Objects of the following type(s) are allowed in the list
      * {@link ArtifactElementType }
      */
-    @objid ("f473a4d0-bbf5-4481-b6ec-04ac0b1303fc")
     public List<ArtifactElementType> getCorrespondingVariableArtifactElement() {
         if (correspondingVariableArtifactElement == null) {
             correspondingVariableArtifactElement = new ArrayList<ArtifactElementType>();
@@ -142,7 +132,6 @@ public abstract class VariationType extends IdentifiableType {
      * possible object is
      * {@link Boolean }
      */
-    @objid ("5fbbac13-985b-46dd-a04f-d9f3f9f750a7")
     public Boolean isSelected() {
         return selected;
     }
@@ -153,7 +142,6 @@ public abstract class VariationType extends IdentifiableType {
      * @param value allowed object is
      * {@link Boolean }
      */
-    @objid ("f055ec85-db5b-4b27-b80f-63f34946ab3b")
     public void setSelected(Boolean value) {
         this.selected = value;
     }

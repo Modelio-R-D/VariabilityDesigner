@@ -2,7 +2,6 @@ package org.modelio.module.variabilitydesigner.utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
@@ -20,9 +19,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.UmlModelElement;
 import org.modelio.module.variabilitydesigner.api.IVariabilityDesignerPeerModule;
 
-@objid ("57910e46-e3cc-4f34-b29e-9470232a40cc")
 public class DiagramToolsUtils {
-    @objid ("3827c23b-f16a-43f4-8768-c5a156d08641")
     public static boolean acceptElement(DefaultMultiLinkTool tool, final IDiagramHandle diagramHandle, final IDiagramGraphic targetNode) {
         ModelElement owner = null;
         
@@ -33,14 +30,13 @@ public class DiagramToolsUtils {
         }
         
         for (ElementScope aScope : tool.getSourceScopes()) {
-            if (aScope.isMatching(owner, true)) {
+            if (aScope.isMatching(owner)) {
                 return true;
             }
         }
         return false;
     }
 
-    @objid ("5f8c45d6-3283-4bf0-9b0d-1b5b406f5d0f")
     public static void constraintCreation(DefaultMultiLinkTool tool, String stereotype, final IDiagramHandle diagramHandle, final IDiagramGraphic lastNode, final List<IDiagramGraphic> otherNodes, final List<LinkRouterKind> routerKinds, final List<ILinkPath> paths, final Rectangle rectangle) {
         IModelingSession session = tool.getModule().getModuleContext().getModelingSession();
         
@@ -55,9 +51,9 @@ public class DiagramToolsUtils {
             constraint.addStereotype(IVariabilityDesignerPeerModule.MODULE_NAME, stereotype);
             constraint.setName("variation");
             constraint.getConstrainedElement().addAll(contrainedElements);
-            
+        
             int i = 0;
-            
+        
             List<IDiagramGraphic> graph = diagramHandle.unmask(constraint, rectangle.x, rectangle.y);
             for (IDiagramGraphic iDiagramGraphic : graph) {
                 if (iDiagramGraphic instanceof IDiagramLink) {

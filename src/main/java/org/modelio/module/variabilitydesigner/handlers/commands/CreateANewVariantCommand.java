@@ -1,7 +1,6 @@
 package org.modelio.module.variabilitydesigner.handlers.commands;
 
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.modelio.api.module.IModule;
 import org.modelio.api.module.command.DefaultModuleCommandHandler;
 import org.modelio.api.module.context.IModuleContext;
@@ -10,9 +9,7 @@ import org.modelio.module.variabilitydesigner.vel.imports.TrimmingData;
 import org.modelio.module.variabilitydesigner.vel.imports.TrimmingDataGenerator;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-@objid ("f916a2c4-0592-4779-8c12-2e9194f4e9db")
 public class CreateANewVariantCommand extends DefaultModuleCommandHandler {
-    @objid ("56be001e-90a4-4b16-a4a6-de911fceffcf")
     @Override
     public void actionPerformed(final List<MObject> selectedElements, final IModule module) {
         // Module context is the link to many Modelio services
@@ -32,7 +29,6 @@ public class CreateANewVariantCommand extends DefaultModuleCommandHandler {
         //        }
     }
 
-    @objid ("e3347807-e9fb-478e-aff5-13f588920efa")
     @Override
     public boolean accept(final List<MObject> selectedElements, final IModule module) {
         // Generated call to the super method will check the scope conditions defined in Studio.

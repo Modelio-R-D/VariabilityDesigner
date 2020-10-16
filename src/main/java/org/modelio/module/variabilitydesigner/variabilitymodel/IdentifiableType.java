@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour identifiable-type complex type.
@@ -39,7 +38,6 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/complexType>
  * </pre>
  */
-@objid ("e08df8b4-15d9-461b-8850-0ec36719f9b5")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "identifiable-type", propOrder = {
     "specialData"
@@ -53,18 +51,15 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
     VariationType.class
 })
 public abstract class IdentifiableType {
-    @objid ("bca5151c-4103-4c7f-8bad-68034b4ab09c")
     @XmlAttribute(name = "name")
     protected String name;
 
-    @objid ("68912e75-32b5-42a8-91c6-afc9c794ebbf")
     @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
 
-    @objid ("3083152a-d75c-44f2-bb8c-273db1ad2146")
     @XmlElement(name = "special-data")
     protected List<SpecialDataType> specialData;
 
@@ -88,7 +83,6 @@ public abstract class IdentifiableType {
      * Objects of the following type(s) are allowed in the list
      * {@link SpecialDataType }
      */
-    @objid ("60e72573-1fb7-4b01-acbc-08e94586aa29")
     public List<SpecialDataType> getSpecialData() {
         if (specialData == null) {
             specialData = new ArrayList<SpecialDataType>();
@@ -102,7 +96,6 @@ public abstract class IdentifiableType {
      * possible object is
      * {@link String }
      */
-    @objid ("a576ea3a-3879-46ec-8933-4f6f809ec7df")
     public String getName() {
         return name;
     }
@@ -113,7 +106,6 @@ public abstract class IdentifiableType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("cbdf0895-e09f-4224-b518-03f20d5a9fbb")
     public void setName(String value) {
         this.name = value;
     }
@@ -124,7 +116,6 @@ public abstract class IdentifiableType {
      * possible object is
      * {@link String }
      */
-    @objid ("b6695dfe-da29-48bb-9bf3-d09748f4e260")
     public String getId() {
         return id;
     }
@@ -135,7 +126,6 @@ public abstract class IdentifiableType {
      * @param value allowed object is
      * {@link String }
      */
-    @objid ("64e31cc0-c515-46d6-87c0-fcae7b7dec8c")
     public void setId(String value) {
         this.id = value;
     }

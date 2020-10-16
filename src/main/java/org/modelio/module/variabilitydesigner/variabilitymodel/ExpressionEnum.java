@@ -3,7 +3,6 @@ package org.modelio.module.variabilitydesigner.variabilitymodel;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 /**
  * <p>Classe Java pour expression-enum.
@@ -23,7 +22,6 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
  * &lt;/simpleType>
  * </pre>
  */
-@objid ("fab088cd-f1e2-495b-bfba-0246df4435fe")
 @XmlType(name = "expression-enum")
 @XmlEnum
 public enum ExpressionEnum {
@@ -40,20 +38,16 @@ public enum ExpressionEnum {
     @XmlEnumValue("autosar-expression")
     AUTOSAR_EXPRESSION ("autosar-expression");
 
-    @objid ("a73dee1a-3042-4577-848d-f1079837502d")
     private final String value;
 
-    @objid ("5e34177d-671a-4ad9-90a3-1ea46790693a")
     ExpressionEnum(String v) {
         value = v;
     }
 
-    @objid ("efd65202-1967-4823-b586-0b1f411d1c42")
     public String value() {
         return value;
     }
 
-    @objid ("02245074-4b65-48ea-bc10-7078d3e072fb")
     public static ExpressionEnum fromValue(String v) {
         for (ExpressionEnum c: ExpressionEnum.values()) {
             if (c.value.equals(v)) {

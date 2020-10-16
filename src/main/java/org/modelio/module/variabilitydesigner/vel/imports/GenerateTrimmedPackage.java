@@ -1,7 +1,6 @@
 package org.modelio.module.variabilitydesigner.vel.imports;
 
 import java.util.Set;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import org.eclipse.swt.widgets.Display;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
@@ -30,9 +29,7 @@ import org.modelio.module.variabilitydesigner.utils.uml.UMLProcess;
 import org.modelio.module.variabilitydesigner.utils.walkers.Walker;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-@objid ("414b431b-eaa8-42a6-84b4-9cab301a7277")
 public class GenerateTrimmedPackage {
-    @objid ("0f3d28dc-f92f-4606-b792-967ae1fdce01")
     public void generate(IModuleContext ctx, TrimmingData data, org.modelio.metamodel.uml.statik.Class variant) {
         Package pack = null;
         
@@ -65,7 +62,6 @@ public class GenerateTrimmedPackage {
         }
     }
 
-    @objid ("708b2340-3c7c-436d-8866-bfb7d6fa3ee7")
     public void remove(Element element, IModuleContext ctx) {
         for(AbstractDiagram diagramElement : element.getDiagramElement()) {
             IDiagramHandle diagramHandle = ctx.getModelioServices().getDiagramService().getDiagramHandle(diagramElement);
@@ -78,7 +74,6 @@ public class GenerateTrimmedPackage {
         element.delete();
     }
 
-    @objid ("c8a65018-f9fc-4a9a-a381-250a91457d65")
     private void trim(IModuleContext ctx, TrimmingData data, Package cloned) {
         Set<MObject> elementsToKeep = data.getElementsToKeep();
         
@@ -118,7 +113,6 @@ public class GenerateTrimmedPackage {
         walker.walk(new CompositionUMLElement(cloned));
     }
 
-    @objid ("2e32a73a-f3c6-40ac-97e5-fe1c97de02df")
     private void check(Package cloned, ReportModel rm) {
         Walker<IUMLElement> walker = new Walker<>();
         walker.setProcess(new UMLProcess() {
