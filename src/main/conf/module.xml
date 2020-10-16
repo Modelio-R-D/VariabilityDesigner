@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Module id="${project.name}" class="org.modelio.module.variabilitydesigner.impl.VariabilityDesignerModule" binaryversion="4.0.0" version="${project.version}" schema-level="2" uid="b344afb4-c0f7-44d1-9b1e-b27b0deaf5ac" author="Softeam" image="" url="">
+    <ClassPath>
+        <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
+    </ClassPath>
+    <Profiles>
+        <Profile uid="e38e4864-cdff-42ef-afc0-92965176c994" id="Variation">
+            <Stereotype name="Variation" metaclass="Standard.Constraint" owner-stereotype="" is-hidden="true" label="%stereotype.Variation.label" uid="ebd3be3d-24ea-49d7-883f-58b3a3de118d" is-abstract="true">
+                <Icon path=""/>
+                <Image path=""/>
+                <TagTypes>
+                    <TagType name="Variation_Point_ID" uid="5d2b918d-3d7f-4834-a3cc-761929978967" label="%tagtype.Variation_Point_ID.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Optional_Structural_Variation" metaclass="Standard.Constraint" owner-stereotype="mref#'' {ebd3be3d-24ea-49d7-883f-58b3a3de118d} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Optional_Structural_Variation.label" uid="13a0bd3b-2d6c-4df9-8d0a-1e4f17868c20" is-abstract="false">
+                <Icon path="res/icon/gui/optional16.png"/>
+                <Image path=""/>
+                <TagTypes>
+                    <TagType name="Type" uid="7195e113-ffdf-474f-bcfe-95c61934952f" label="%tagtype.Type.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Condition" uid="6cdec601-1400-41d1-ab1b-683bba6018de" label="%tagtype.Condition.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Alternative_Structural_Variation" metaclass="Standard.Constraint" owner-stereotype="mref#'' {ebd3be3d-24ea-49d7-883f-58b3a3de118d} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Alternative_Structural_Variation.label" uid="bc83b3b7-a7bb-44f1-b3b1-8a0f60e3a7a2" is-abstract="false">
+                <Icon path="res/icon/gui/alternative16.png"/>
+                <Image path=""/>
+                <TagTypes>
+                    <TagType name="Type" uid="7fc513ff-2c09-4b58-a0ef-8a427170891c" label="%tagtype.Type.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Condition" uid="bd0ff7fd-68d5-4591-bdb9-e901d7c78697" label="%tagtype.Condition.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Calculated_Parameter_Variation" metaclass="Standard.Constraint" owner-stereotype="mref#'' {ebd3be3d-24ea-49d7-883f-58b3a3de118d} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Calculated_Parameter_Variation.label" uid="b67fcb92-1c2d-4a52-9a18-a5ded16b9a4f" is-abstract="false">
+                <Icon path="res/icon/gui/calculated.png"/>
+                <Image path=""/>
+                <TagTypes>
+                    <TagType name="Type" uid="85b8a68d-faba-47e7-a57c-8d8420954bf7" label="%tagtype.Type.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Expression" uid="e3a90ba9-ec30-4b32-ab6a-855574ead050" label="%tagtype.Expression.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Applied_on" uid="b105ec93-cda6-49a2-816e-d6e64e83964e" label="%tagtype.Applied_on.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Alternative_Parameter_Variation" metaclass="Standard.Constraint" owner-stereotype="mref#'' {ebd3be3d-24ea-49d7-883f-58b3a3de118d} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Alternative_Parameter_Variation.label" uid="6f9faa55-f77b-4111-a573-8295ceb345fc" is-abstract="false">
+                <Icon path="res/icon/gui/xorParameter.png"/>
+                <Image path=""/>
+                <TagTypes>
+                    <TagType name="Type" uid="09055b18-ba6e-4c41-a512-e941fe8a81c3" label="%tagtype.Type.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Condition" uid="f28591df-8e84-4ebe-8033-863b5e6a0aa3" label="%tagtype.Condition.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Value" uid="9028bb23-ad01-4140-b7dc-05756dad7c11" label="%tagtype.Value.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                    <TagType name="Applied_on" uid="f55a5703-9625-4370-a599-dc61ca4c2200" label="%tagtype.Applied_on.label" parameter-card="1" is-hidden="false" is-signed="true"/>
+                </TagTypes>
+            </Stereotype>
+        </Profile>
+        <Profile uid="da39fbfb-4dfc-4006-8450-e24ab5b5e23e" id="Project setup">
+            <Stereotype name="model150" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.model150.label" uid="8518a7a5-144c-4189-a2c4-5bb7df84003f" is-abstract="false">
+                <Icon path="res/icon/gui/VariabilityPackage.png"/>
+                <Image path=""/>
+            </Stereotype>
+        </Profile>
+        <Profile uid="3cd44106-b34d-4293-a36d-5fd224ac177e" id="Automatic">
+            <Stereotype name="Class_Diagram_(Variability)" metaclass="Standard.ClassDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Class_Diagram_(Variability).label" uid="7863d1bf-ac2d-4f1c-9a18-54bdd695004a" is-abstract="false">
+                <Icon path="res/icon/gui/classdiagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Activity_Diagram_(Variability)" metaclass="Standard.ActivityDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Activity_Diagram_(Variability).label" uid="ab5fd973-2bd6-4d3e-9ec5-01774002b15d" is-abstract="false">
+                <Icon path="res/icon/gui/activitydiagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Communication_Diagram_(Variability)" metaclass="Standard.CommunicationDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Communication_Diagram_(Variability).label" uid="75f73c97-2807-4f78-8fee-4dcb27015ba0" is-abstract="false">
+                <Icon path="res/icon/gui/communicationdiagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Deployment_Diagram_(Variability)" metaclass="Standard.DeploymentDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Deployment_Diagram_(Variability).label" uid="f534f6ce-af80-4e35-9404-5fb8bdd23352" is-abstract="false">
+                <Icon path="res/icon/gui/deploymentdiagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Object_Diagram_(Variability)" metaclass="Standard.ObjectDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Object_Diagram_(Variability).label" uid="faabe302-91ef-47cd-92a8-6919e788840d" is-abstract="false">
+                <Icon path="res/icon/gui/objectdiagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Sequence_Diagram_(Variability)" metaclass="Standard.SequenceDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Sequence_Diagram_(Variability).label" uid="cd2fe02a-d8c7-40d9-898b-46177e9cf19f" is-abstract="false">
+                <Icon path="res/icon/gui/sequencediagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="State_Machine_Diagram_(Variability)" metaclass="Standard.StateMachineDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.State_Machine_Diagram_(Variability).label" uid="1ebf31a3-cebd-4c1d-bfaf-f0cabe9eb4e2" is-abstract="false">
+                <Icon path="res/icon/gui/statediagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Use_Case_Diagram_(Variability)" metaclass="Standard.UseCaseDiagram" owner-stereotype="mref#'' {80f753fc-c7a9-424d-9b5a-b9475971dad9} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Use_Case_Diagram_(Variability).label" uid="e03a90f1-d88d-4ee7-a169-3d4c07e7c238" is-abstract="false">
+                <Icon path="res/icon/gui/usecasediagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Variation_Diagram" metaclass="Infrastructure.AbstractDiagram" owner-stereotype="" is-hidden="true" label="%stereotype.Variation_Diagram.label" uid="80f753fc-c7a9-424d-9b5a-b9475971dad9" is-abstract="false">
+                <Icon path=""/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Feature_Diagram" metaclass="Standard.ClassDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.Feature_Diagram.label" uid="154248f2-acd9-4c6e-9b98-8df045ffae53" is-abstract="false">
+                <Icon path="res/icon/gui/featurediagram.png"/>
+                <Image path=""/>
+            </Stereotype>
+        </Profile>
+        <Profile uid="67e9cc45-237b-4265-9b49-ffdc0d97855a" id="Feature">
+            <Stereotype name="FeatureModel" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.FeatureModel.label" uid="9e29638a-e6aa-4437-9bfc-1961caa78867" is-abstract="false">
+                <Icon path="res/icon/gui/VariabilityPackage.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="FeatureRoot" metaclass="Standard.Class" owner-stereotype="mref#'' {7477447f-27bb-4997-b4d4-49785dee4238} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.FeatureRoot.label" uid="f64bc54e-2d80-4bae-98ed-792224160a56" is-abstract="false">
+                <Icon path="res/icon/gui/featureroot.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Feature" metaclass="Standard.Class" owner-stereotype="" is-hidden="false" label="%stereotype.Feature.label" uid="7477447f-27bb-4997-b4d4-49785dee4238" is-abstract="false">
+                <Icon path=""/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="MandatoryFeature" metaclass="Standard.Class" owner-stereotype="mref#'' {7477447f-27bb-4997-b4d4-49785dee4238} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.MandatoryFeature.label" uid="523c9b53-38f5-4f81-887d-57d47ee96b91" is-abstract="false">
+                <Icon path="res/icon/gui/mandatory24.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="OptionalFeature" metaclass="Standard.Class" owner-stereotype="mref#'' {7477447f-27bb-4997-b4d4-49785dee4238} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.OptionalFeature.label" uid="7f47f70f-9623-422b-b953-1791a7dc994c" is-abstract="false">
+                <Icon path="res/icon/gui/optional24.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="AlternativeFeature" metaclass="Standard.Class" owner-stereotype="mref#'' {7477447f-27bb-4997-b4d4-49785dee4238} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.AlternativeFeature.label" uid="7a57929a-4732-49b8-aeab-83709e8be6c6" is-abstract="false">
+                <Icon path="res/icon/gui/alternative24.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="OrFeature" metaclass="Standard.Class" owner-stereotype="mref#'' {7477447f-27bb-4997-b4d4-49785dee4238} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.OrFeature.label" uid="a33dfdac-cf62-4751-b671-820cee4606f6" is-abstract="false">
+                <Icon path="res/icon/gui/or24.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="Variant" metaclass="Standard.Class" owner-stereotype="" is-hidden="false" label="%stereotype.Variant.label" uid="d3208dba-742d-40c8-8e15-d84aa3f1bfc8" is-abstract="false">
+                <Icon path="res/icon/gui/variant.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <Stereotype name="VariantDefinition" metaclass="Infrastructure.MatrixDefinition" owner-stereotype="" is-hidden="false" label="%stereotype.VariantDefinition.label" uid="b7482db0-6136-496c-b767-fa2e748eb902" is-abstract="false">
+                <Icon path="res/icon/gui/variabilitymatrix.png"/>
+                <Image path=""/>
+            </Stereotype>
+            <MetaclassReference uid="a65141d4-8ad3-4f0c-ba82-5d0611041514" metaclass="Standard.UmlModelElement">
+                <NoteTypes>
+                    <NoteType name="Feature" label="%notetype.Feature.label" is-hidden="false" uid="a0a32e9f-4557-446b-8453-6da2529f505e" mime-type="text/plain"/>
+                </NoteTypes>
+            </MetaclassReference>
+        </Profile>
+    </Profiles>
+    <Gui>
+        <Commands>
+            <Command id="Generate_VEL_description_file" label="%command.Generate_VEL_description_file.label" tooltip="%command.Generate_VEL_description_file.tooltip" image="res/icon/gui/SaveVELDescripton.png" modify-model="true">
+                <Scope metaclass="Standard.Package" stereotype="VariabilityDesigner#model150"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.GenerateVELDescriptionFile">
+                    <HParameter name="name" value=""/>
+                </Handler>
+            </Command>
+            <Command id="Check_Conformance" label="%command.Check_Conformance.label" tooltip="%command.Check_Conformance.tooltip" image="" modify-model="false">
+                <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.CheckConformance"/>
+            </Command>
+            <Command id="Generate_a_Variant" label="%command.Generate_a_Variant.label" tooltip="%command.Generate_a_Variant.tooltip" image="res/icon/gui/CreateVariant.png" modify-model="true">
+                <Scope metaclass="Standard.Class" stereotype="VariabilityDesigner#Variant"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.CreateANewVariantCommand"/>
+            </Command>
+            <Command id="Feature_Diagram" label="%command.Feature_Diagram.label" tooltip="%command.Feature_Diagram.tooltip" image="res/icon/gui/featurediagram.png" modify-model="false">
+                <Scope metaclass="Standard.Class" stereotype="VariabilityDesigner#FeatureRoot"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.FeatureDiagram">
+                    <HParameter name="name" value="Feature Diagram"/>
+                    <HParameter name="stereotype" value="VariabilityDesigner#Feature_Diagram"/>
+                    <HParameter name="metaclass" value="Standard.ClassDiagram"/>
+                    <HParameter name="style" value="variability"/>
+                </Handler>
+            </Command>
+            <Command id="Variant" label="%command.Variant.label" tooltip="%command.Variant.tooltip" image="res/icon/gui/variant.png" modify-model="false">
+                <Scope metaclass="Standard.Package" stereotype="VariabilityDesigner#FeatureModel"/>
+                <Handler class="ElementCreate">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Variant"/>
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="name" value="Variant"/>
+                </Handler>
+            </Command>
+            <Command id="Feature_Model" label="%command.Feature_Model.label" tooltip="%command.Feature_Model.tooltip" image="res/icon/gui/VariabilityPackage.png" modify-model="false">
+                <Scope metaclass="Standard.Package" stereotype=""/>
+                <Handler class="ElementCreate">
+                    <HParameter name="stereotype" value="VariabilityDesigner#FeatureModel"/>
+                    <HParameter name="metaclass" value="Standard.Package"/>
+                    <HParameter name="name" value="Feature model"/>
+                </Handler>
+            </Command>
+            <Command id="Generate_VEL" label="%command.Generate_VEL.label" tooltip="%command.Generate_VEL.tooltip" image="" modify-model="false">
+                <Scope metaclass="Standard.Class" stereotype="VariabilityDesigner#FeatureRoot"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.GenerateVEL">
+                    <HParameter name="name" value=""/>
+                </Handler>
+            </Command>
+            <Command id="Generate_VEL_Variant" label="%command.Generate_VEL_Variant.label" tooltip="%command.Generate_VEL_Variant.tooltip" image="" modify-model="false">
+                <Scope metaclass="Standard.Class" stereotype="VariabilityDesigner#FeatureRoot"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.GenerateVELVariant"/>
+            </Command>
+            <Command id="Import_VEL_Variant" label="%command.Import_VEL_Variant.label" tooltip="%command.Import_VEL_Variant.tooltip" image="" modify-model="false">
+                <Scope metaclass="Standard.Class" stereotype="VariabilityDesigner#FeatureRoot"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.ImportVELVariant">
+                    <HParameter name="name" value=""/>
+                </Handler>
+            </Command>
+            <Command id="Feature_Root" label="%command.Feature_Root.label" tooltip="%command.Feature_Root.tooltip" image="res/icon/gui/featureroot.png" modify-model="false">
+                <Scope metaclass="Standard.Package" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.commands.RootFeature">
+                    <HParameter name="stereotype" value="VariabilityDesigner#FeatureRoot"/>
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="name" value="Root"/>
+                </Handler>
+            </Command>
+        </Commands>
+        <Tools>
+            <Tool id="Add_alternative_variation" label="%tool.Add_alternative_variation.label" tooltip="%tool.Add_alternative_variation.tooltip" image="res/icon/gui/alternative16.png">
+                <Scope-source metaclass="Standard.UmlModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.tools.AddAlternativeVariationTool">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Alternative_Structural_Variation"/>
+                    <HParameter name="metaclass" value="Standard.Constraint"/>
+                    <HParameter name="name" value="Variation"/>
+                </Handler>
+            </Tool>
+            <Tool id="Add_calculated_parameter_variation" label="%tool.Add_calculated_parameter_variation.label" tooltip="%tool.Add_calculated_parameter_variation.tooltip" image="res/icon/gui/calculated.png">
+                <Scope-source metaclass="Standard.UmlModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.tools.AddCalculatedParameterVariationTool">
+                    <HParameter name="metaclass" value="Standard.Constraint"/>
+                    <HParameter name="name" value="variation"/>
+                </Handler>
+            </Tool>
+            <Tool id="Add_optional_variation" label="%tool.Add_optional_variation.label" tooltip="%tool.Add_optional_variation.tooltip" image="res/icon/gui/optional16.png">
+                <Scope-source metaclass="Standard.UmlModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.tools.AddOptionalVariationTool">
+                    <HParameter name="metaclass" value="Standard.Constraint"/>
+                    <HParameter name="name" value="Element"/>
+                </Handler>
+            </Tool>
+            <Tool id="Add_alternative_parameter_variation" label="%tool.Add_alternative_parameter_variation.label" tooltip="%tool.Add_alternative_parameter_variation.tooltip" image="res/icon/gui/xorParameter.png">
+                <Scope-source metaclass="Standard.UmlModelElement" stereotype=""/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.tools.AddAlternativeParameterVariationTool">
+                    <HParameter name="metaclass" value="Standard.Constraint"/>
+                    <HParameter name="name" value="variation"/>
+                </Handler>
+            </Tool>
+            <Tool id="MandatoryFeatureOld" label="%tool.MandatoryFeature.label" tooltip="%tool.MandatoryFeature.tooltip" image="res/icon/gui/mandatory24.png">
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#Feature"/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="VariabilityDesigner#MandatoryFeature"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Feature"/>
+                </Handler>
+            </Tool>
+            <Tool id="OptionalFeature" label="%tool.OptionalFeature.label" tooltip="%tool.OptionalFeature.tooltip" image="res/icon/gui/optional24.png">
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#Feature"/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="VariabilityDesigner#OptionalFeature"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Feature"/>
+                </Handler>
+            </Tool>
+            <Tool id="AlternativeFeature" label="%tool.AlternativeFeature.label" tooltip="%tool.AlternativeFeature.tooltip" image="res/icon/gui/alternative24.png">
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#Feature"/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="VariabilityDesigner#AlternativeFeature"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Feature"/>
+                </Handler>
+            </Tool>
+            <Tool id="MandatoryFeature" label="%tool.MandatoryFeature.label" tooltip="%tool.MandatoryFeature.tooltip" image="res/icon/gui/mandatory24.png">
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#FeatureRoot"/>
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#MandatoryFeature"/>
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#OptionalFeature"/>
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#AlternativeFeature"/>
+                <Scope-source metaclass="Standard.Class" stereotype="VariabilityDesigner#OrFeature"/>
+                <Handler class="org.modelio.module.variabilitydesigner.handlers.tools.MandatoryFeatureTool">
+                    <HParameter name="stereotype" value="VariabilityDesigner#MandatoryFeature"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Feature"/>
+                </Handler>
+            </Tool>
+        </Tools>
+        <ContextualMenu>
+            <CommandRef refid="Generate_VEL_description_file" group="" group-image=""/>
+            <CommandRef refid="Generate_a_Variant" group="" group-image=""/>
+            <CommandRef refid="Feature_Diagram" group="" group-image=""/>
+            <CommandRef refid="Generate_VEL" group="" group-image=""/>
+            <CommandRef refid="Import_VEL_Variant" group="" group-image=""/>
+        </ContextualMenu>
+        <Diagrams>
+            <DiagramType base-diagram="Standard.ClassDiagram" stereotype="VariabilityDesigner#Class_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Class_Diagram_(Variability).label" icon="res/icon/gui/classdiagram.png" information="%wizard.Class_Diagram_(Variability).info" details="%wizard.Class_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Class_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.ClassDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Class_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.ClassDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.ActivityDiagram" stereotype="VariabilityDesigner#Activity_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Activity_Diagram_(Variability).label" icon="res/icon/gui/activitydiagram.png" information="%wizard.Activity_Diagram_(Variability).info" details="%wizard.Activity_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Activity_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.ActivityDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Activity_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.ActivityDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.CommunicationDiagram" stereotype="VariabilityDesigner#Communication_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Communication_Diagram_(Variability).label" icon="res/icon/gui/communicationdiagram.png" information="%wizard.Communication_Diagram_(Variability).info" details="%wizard.Communication_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Communication_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.CommunicationDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Communication_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.CommunicationDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.DeploymentDiagram" stereotype="VariabilityDesigner#Deployment_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Deployment_Diagram_(Variability).label" icon="res/icon/gui/deploymentdiagram.png" information="%wizard.Deployment_Diagram_(Variability).info" details="%wizard.Deployment_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Deployment_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.DeploymentDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Deployment_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.DeploymentDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.ObjectDiagram" stereotype="VariabilityDesigner#Object_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Object_Diagram_(Variability).label" icon="res/icon/gui/objectdiagram.png" information="%wizard.Object_Diagram_(Variability).info" details="%wizard.Object_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Object_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.ObjectDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Object_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.ObjectDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.SequenceDiagram" stereotype="VariabilityDesigner#Sequence_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Sequence_Diagram_(Variability).label" icon="res/icon/gui/sequencediagram.png" information="%wizard.Sequence_Diagram_(Variability).info" details="%wizard.Sequence_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Sequence_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.SequenceDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Sequence_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.SequenceDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.StateMachineDiagram" stereotype="VariabilityDesigner#State_Machine_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.State_Machine_Diagram_(Variability).label" icon="res/icon/gui/statediagram.png" information="%wizard.State_Machine_Diagram_(Variability).info" details="%wizard.State_Machine_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#State_Machine_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.StateMachineDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#State_Machine_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.StateMachineDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.UseCaseDiagram" stereotype="VariabilityDesigner#Use_Case_Diagram_(Variability)">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="Add_optional_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_calculated_parameter_variation" group="%group.Variations.label"/>
+                    <ToolRef refid="Add_alternative_parameter_variation" group="%group.Variations.label"/>
+                </Palette>
+                <Wizard label="%wizard.Use_Case_Diagram_(Variability).label" icon="res/icon/gui/usecasediagram.png" information="%wizard.Use_Case_Diagram_(Variability).info" details="%wizard.Use_Case_Diagram_(Variability).detail" preview-image="">
+                    <Scope metaclass="Infrastructure.ModelElement" stereotype=""/>
+                    <Handler class="GenericWizardContributor">
+                        <HParameter name="stereotype" value="VariabilityDesigner#Use_Case_Diagram_(Variability)"/>
+                        <HParameter name="metaclass" value="Standard.UseCaseDiagram"/>
+                    </Handler>
+                </Wizard>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Use_Case_Diagram_(Variability)"/>
+                    <HParameter name="metaclass" value="Standard.UseCaseDiagram"/>
+                </Handler>
+            </DiagramType>
+            <DiagramType base-diagram="Standard.ClassDiagram" stereotype="VariabilityDesigner#Feature_Diagram">
+                <Palette keepBasePalette="false">
+                    <ToolRef refid="MandatoryFeatureOld" group="%group.Variability.label"/>
+                    <ToolRef refid="AlternativeFeature" group="%group.Variability.label"/>
+                    <ToolRef refid="OptionalFeature" group="%group.Variability.label"/>
+                    <ToolRef refid="CREATE_USE" group="%group.Variability.label"/>
+                </Palette>
+                <Handler class="StandardCustomizer">
+                    <HParameter name="stereotype" value="VariabilityDesigner#Feature_Diagram"/>
+                    <HParameter name="metaclass" value="Standard.ClassDiagram"/>
+                </Handler>
+            </DiagramType>
+        </Diagrams>
+        <Views>
+            <PropertyPage id="Variations" class="org.modelio.module.variabilitydesigner.handlers.propertypage.VariabilityPropertyPage" label="%propertypage.Variations.label" image="res/icon/gui/variability16.png"/>
+        </Views>
+    </Gui>
+    <Resources>
+        <Styles>
+            <Style id="variability" path="res/generated/styles/variability.style"/>
+        </Styles>
+    </Resources>
+</Module>
