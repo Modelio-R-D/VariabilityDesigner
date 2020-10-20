@@ -1,9 +1,6 @@
 
 link:https://www.modelio.org[image:README/logo-modelio-v4.png[]]
 
-
-image::README/logo-modelio-v4.png[]
-
 # VariabilityDesigner
 
 This Modelio module is made to represent the variability of a model, and to allow the connection with an external variability management tool. 
