@@ -1,3 +1,7 @@
+
+link:https://www.modelio.org[image:README/logo-modelio-v4.png[]]
+
+
 image::README/logo-modelio-v4.png[]
 
 # VariabilityDesigner
